@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<title>Torre di Hanoi</title>
+		<link rel="icon" type="image/png" href="favicon.png"> 
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">	
+		<link rel="stylesheet" href="mystyle.css" > 
+
+	</head>
+	<body>
+		<header>
+			<center><h1>Torre di Hanoi</h1></center>
+		</header>
+		<main>
+			
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h2>Storia del Gioco</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-8">
+					<p style="padding:4%">
+						La Torre di Hanoi è un famoso rompicapo matematico e un gioco di strategia che prende il nome dal
+						la città di Hanoi, in Vietnam, dove la leggenda vuole che sia stata inventata. Tuttavia, non esistono prove storiche concrete che confermino questa leggenda.<br>
+
+						Il gioco è stato inventato dal matematico francese Edouard Lucas nel 1883.<br> La storia racconta che Lucas si ispirò a
+						una leggenda indiana secondo 
+						la quale i monaci di un antico tempio dovevano spostare 64 dischi d'oro da una sottopentola ad un'altra, segue
+						ndo regole precise. Ogni disco era più grande di quello sottostante, e il compito doveva essere completato senza mai por
+						re un disco più grande sopra uno più piccolo. Secondo la leggenda, quando il compito sarebbe stato completato, il mondo sarebbe finito.</p>
+					</div>
+					<div class="col-4">
+						<p style="padding:4%">
+						<img src="hanoi.jpg" style="width:100%" alt="gioco hanoi" title="gioco hanoi"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+					<h2>Regole del Gioco</h2>
+						<p>						 
+					<ul>
+                    <li>Ogni mossa può coinvolgere solo un disco alla volta.</li>
+                    <li>Un disco più grande non può essere posizionato sopra un disco più piccolo.</li>
+                    <li>Utilizza i bottoni "Prendi" e "Metti" per spostare i dischi tra le colonne.</li>
+					<li>Se hai bisogno puoi sempre utilizzare il tasto reset</li>
+					</ul>
+					</div>
+						</p>
+					</div>
+				<div class="col">
+				<div class="row">
+					<div class="col">
+						<h2>Prova il gioco</h2>
+					</div>
+				</div>
+				<div class="row" style="margin-top:20px;">
+					<div class="col">
+						<h4  id="moveCounter">Mosse eseguite: 0</h4>
+					</div>
+					<div class="col">
+						<button id="btn" class="btn btn-primary" onclick="showInfoMessage()">Messaggio informativo</button>
+					</div>
+				</div>
+				<div class="row" style="margin-top:20px;">
+					<div class="col">
+						<h3 id="winMessage" style="color: #c50000;"></h3>
+					</div>
+				</div>
+				<div class="row">
+					<div id="pole1" class="col-4">						
+					</div>
+					<div id="pole2" class="col-4">
+					</div>
+					<div id="pole3" class="col-4">
+					</div>
+				</div>
+				<div class="row" style="margin-top:20px;">
+					<div class="col-4">
+						<center><button id="btn1" class="btn btn-primary" onclick="actionPole(1)">Prendi</button></center>
+					</div>
+					<div class="col-4">
+						<center><button id="btn2" class="btn btn-primary" onclick="actionPole(2)">Prendi</button></center>
+					</div>
+					<div class="col-4">
+						<center><button id="btn3" class="btn btn-primary" onclick="actionPole(3)">Prendi</button></center>
+					</div>
+				</div>
+					<div class="row">
+					<div class="col-4"></div>
+					<div id="myHand" class="col-4" Style="margin-top:2%"></div>
+					<div class="col-4"></div>
+				</div>
+				<div class="row">
+					<div class="col-21">
+						<center><button style="margin-top:10%" id="restartBtn" class="btn btn-danger" onclick="restartGame()">Riordina</button></center>
+					</div>
+				</div>
+
+				</div>
+				</div>
+		</main>
+		<footer>
+
+			<center><p style="margin-top:5%">  &copy; Rocco Brindisi</p></center>
+		</footer>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
+	<script>
+		var pole1 = [1,2,3,4];
+		var pole2 = [];
+		var pole3 = [];
+		var mano = 0;
+		var moves = 0;
+		
+		drawScene();
+		
+		function drawScene(){
+			drawPoles();
+			drawHand();
+			checkButtons();
+			checkWin();
+		}
+		
+		function showInfoMessage() {
+            alert("Il minimo di mosse possibile per risolvere il gioco sono 15. \n Buona fortuna ;)");
+        }
+		
+		function drawPoles(){
+			for(let i=1;i<4;i++){
+				drawPole(getPole(i), getDivPole(i));
+			}
+		}
+		
+		function getDivPole(n){
+			return document.getElementById("pole"+n);
+		}
+		
+		function drawPole(pole, div){
+			div.innerHTML = "";
+			for(let i=0; i<pole.length; i++){
+				div.innerHTML+=drawDisk(pole[i]);
+			}
+		}
+		
+		function checkButtons(){
+			for(let i=1;i<4;i++)
+				checkButton(i);
+		}	
+
+		function getPole(n){
+			switch(n){
+				case 1: return pole1;
+				case 2: return pole2;
+				case 3: return pole3;
+			}
+		}
+		
+		function checkButton(n){
+			let button = document.getElementById("btn" + n);
+			let pole = getPole(n);
+			if(mano==0){
+				button.innerText = "Prendi";
+				button.disabled = pole.length == 0;
+			} else {
+				button.innerText = "Metti";				
+				button.disabled = pole.length > 0 ? pole[0] < mano : false;	
+			}
+		}
+		
+		function drawHand(){
+			let handDiv = document.getElementById("myHand");
+			handDiv.innerHTML = drawDisk(mano);
+		}
+		
+		function actionPole(n){
+			if(mano==0){
+				mano = getPole(n).shift();
+			} else {
+				getPole(n).unshift(mano);
+				mano = 0;
+				moves=moves+1;
+				updateMoveCounter();
+			}
+			drawScene();
+		}
+		
+		function getColor(dimension){
+			let color = "#2ad219";
+			switch(dimension){
+				case 1: color = "#c733d7"; break;
+				case 2: color = "#d73333"; break;		
+				case 3: color = "#3357d7"; break;
+			}
+			return color;
+		}
+		
+		function drawDisk(dimension){
+			let color = getColor(dimension);
+			return '<center><div class="disk" style="background-color:'+color+'; width:'+dimension*10+'%;"></div></center>';
+		}
+		function checkWin(){
+			if (pole3.length === 4) {
+				document.getElementById("winMessage").innerText = "Complimenti, hai comletato il gioco";
+	
+			}
+		}
+		function restartGame(){
+            moves = 0;
+            mano = 0;
+            pole1 = [1,2,3,4];
+            pole2 = [];
+            pole3 = [];
+			updateMoveCounter()
+			document.getElementById("winMessage").innerText = "";
+			restartBtn.innerText = "Restart";
+            drawScene();
+        }
+		function updateMoveCounter() {
+			document.getElementById("moveCounter").innerText = "Mosse: " + moves;
+			if(moves===15){
+				IndizioBtn.disable=true;
+				document.getElementById("winMessage").innerText = "";
+			}
+		}
+	</script>
+</html>
