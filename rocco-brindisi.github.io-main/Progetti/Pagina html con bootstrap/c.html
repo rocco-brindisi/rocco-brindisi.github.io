@@ -1,0 +1,238 @@
+<html>
+	<head>
+		<title>Pagina</title>
+		<link rel="icon" type="image/png" href="c.png">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+		<link href="css.css" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+  <img src="programing.png" alt="programmazione" width="30" height="30">
+    <a class="navbar-brand" href="linguaggi.html">Programmazione</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="linguaggi.html">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Linguaggi
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="c.html">C</a></li>
+			<li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="c++.html">C++</a></li>
+			<li><hr class="dropdown-divider"></li>
+			<li><a class="dropdown-item" href="java.html">Java</a></li>
+
+
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+		</header>
+		<main>
+
+<font face="Times New Roman" color="black" size="13" style="padding:40px"><b>La storia</b></font>
+<div style="padding:40px">
+<p>Sviluppato tra il 1969 e il 1973 all'interno dei laboratori di ricerca dell'AT&T da Dennis Ritchie e Kevin Thompson, il <b>linguaggio C</b> è un linguaggio di programmazione adatto ad ogni scopo (general-purpose) tra i più utilizzati e conosciuti di sempre. 
+Come la gran parte dei <b>linguaggi imperativi</b> nati nel solco della tradizione dell'<b>ALGOL</b>, anche il linguaggio C è basato sulla <b>programmazione strutturata</b> e permette lo <b>scoping lessicale</b> (una funzione contenuta in un'altra funzione – ovvero <b>annidiata</b> – 
+può avere accesso a tutte le variabili della funzione che la contiene) e la <b>ricorsività</b>. Grazie alla <b>tipizzazione statica</b> delle variabili (definizione stringente delle variabili di una funzione, che possono quindi assumere solamente i valori stabiliti inizialmente)
+ si riescono a prevenire molti degli errori di programmazione più comuni. Molti linguaggi hanno preso in prestito parti – più o meno grandi – della struttura di C. Basti pensare, ad esempio, a D, Go, Java, JavaScript, PHP, C#, C++ e Python. Molti, inoltre, sono anche sintatticamente 
+ molto simili al linguaggio sviluppato da Dennis Ritchie. <br></div>
+ <div class="text-center">
+  <img src="https://www.androidiani.com/wp-content/uploads/2011/10/dennis_ritchie.jpg" class="rounded" alt="Dennis Ritchie">
+</div>
+<div style="padding:40px">
+ La nascita e l'evoluzione di C è strettamente legata al destino del sistema <b>operativo UNIX</b>. Kevin Thimpson e Dennis Ritchie, due informatici dei laboratori di ricerca e sviluppo AT&T, idearono il nuovo linguaggio di programmazione nel tentativo di effettuare il porting di UNIX 
+ su macchine con architettura <b>PDP-11</b>.<br> Il linguaggio, che prendeva le mosse da <b>B</b> (altro linguaggio di programmazione dell’epoca), era in grado di sfruttare appieno le specifiche tecniche della PDP-11, aumentando di conseguenza le caratteristiche e le funzionalità del sistema operativo.
+L'iniziale lavoro di sviluppo richiese ben 4 anni (dal 1969 al 1973) ma l'anno più prolifico fu il 1972, quando gran parte di UNIX fu riscritto in C. Nel 1978 Brian Kernighan e Dennis Ritchie pubblicarono il primo manuale per il linguaggio C, “The C programming language”: per molti anni le specifiche 
+del linguaggio in esso contenute furono considerate come la versione”ufficiale” di C.<br> La standardizzazione, però, arrivò nel 1989 e nel 1990: nel primo caso fu l'<b>ANSI</b> (American National Standard Institute) a definire le strutture, le funzioni e le keywords standard di C; nel secondo le stesse specifiche 
+furono definite come standard dall'ISO (International Organization for Standardization). Le due standardizzazioni – applicate sostanzialmente allo stesso linguaggio – sono rispettivamente conosciute come <b>C89</b> e <b>C90</b>.
+Con il passare degli anni furono necessarie diverse revisioni e implementazioni di nuove funzioni, per rendere il linguaggio C più attinente alle necessità ed esigenze dei programmatori. Nel 1999 venne rilasciata la versione conosciuta come <b>C99</b>, mentre nel 2011 fu la volta di C11.</p></div>
+
+
+<font face="Times New Roman" color="black" size="13" style="padding:40px"><b>Caratteristiche principali</b></font>
+<div style="padding:40px" >
+<p>Vediamo quali sono le caratteristiche principali del Linguaggio di Programmazione C.
+Sono molte e qui di seguito elenchiamo quelle più importanti cercando di chiarirne il
+significato.
+
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+        Dimensioni del codice ridotte
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+       Generalmente il codice sorgente di un programma in C ha un peso (in Kb) relativamente piccolo, in questo modo risulta molto agevole trasportare il codice da un PC ad un altro, anche usando un
+semplice floppy.
+      </div>
+    </div>
+  </div>
+  
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        Dimensioni dell'eseguibile ridotte
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        Anche una volta compilato, un programma in C, risulta molto piccolo e quindi di più facile diffusione; ovviamente un programma in C potrà essere eseguito solamente sul medesimo Sistema Operativo per cui è stato compilato.
+      </div>
+    </div>
+  </div>
+  
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Efficienza dei programmi
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+      <div class="accordion-body">
+	Un programma scritto in C, proprio per la possibilità messa a disposizione dal linguaggio di gestire a fondo la memoria, e per le sue dimensioni ridotte, risulta particolarmente efficiente.
+      </div>
+    </div>
+  </div>
+  
+   <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+        Può essere compilato su una vasta gamma di computer
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+      <div class="accordion-body">
+Ogni computer può differire dagli altri per almeno due cose, l'architettura ed il sistema operativo; ad esempio un computer con processore x86 e Windows ha delle istruzioni (intese come istruzioni del processore) ed una gestione della memoria diverse da uno Sparc con Linux, però un programma scritto in C può essere
+compilato su ambedue le macchine, data l'alta disponibilità di compilatori per diverse piattaforme. Certo non è "portabile" come Java, però il fatto di essere sulla scena da molti anni e la sua enorme diffusione ne fanno, di fatto, uno strumento altamente portabile.
+      </div>
+    </div>
+  </div>
+  
+    <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+        E' un linguaggio di alto livello
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+      <div class="accordion-body">
+Un linguaggio di programmazione viene definito di alto livello tanto più si avvicina alla terminologia umana, inversamente si dice che un linguaggio è di basso livello se il suo codice si avvicina al linguaggio macchina (quello formato da 0 ed 1); tipico esempio di
+linguaggio a basso livello è l'Assembler, mentre linguaggi ad alto livello sono, oltre al C, il C++, il Java e molti altri. La particolarità
+dei linguaggi ad alto livello è quella di avere una semplice sintassi in cui si usano parole della lingua inglese per descrivere comandi corrispondenti a decine di istruzioni in assembler o centinaia di istruzioni in linguaggio macchina.
+      </div>
+    </div>
+  </div>
+  
+      <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+        Può maneggiare attività di basso livello
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+      <div class="accordion-body">
+Il C è considerato il linguaggio di più basso livello tra i linguaggi di alto livello. Questo è dovuto al fatto che ha poche istruzioni, gestisce in maniera efficiente la memoria ed è
+possibile inserire direttamente all'interno di un file in C del codice Assembler.
+      </div>
+    </div>
+  </div>
+  
+   <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+        Implementazione dei puntatori
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
+      <div class="accordion-body">
+Il C fa un largo uso di puntatori per
+le operazioni riguardanti la memoria, gli array, le strutture e le funzioni.
+      </div>
+    </div>
+  </div>
+  
+   <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="panelsStayOpen-collapseEight">
+        Loose Typing
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
+      <div class="accordion-body">
+In poche parole in C i tipi di dato delle variabili non devono necessariamente essere dichiarati; contrariamente, nel Pascal, nel
+C++ e nel Java i tipi devono essere dichiarati (strong typing); tale differenza risiede nelle scelte decisionali del progettista del linguaggio, che può volere più o meno flessibilità all'interno dello stesso (compilando un programma Java,
+la maggior parte delle volte si commettono errori di tipo). C'è chi dice che il metodo loose typing permetta al programmatore di commettere errori di tipo che potrebbero compromettere l'esecuzione del programma, ma è anche vero che con lo
+strong typing siamo costretti a seguire delle regole rigide che, a volte, non permettono di risolvere "velocemente" un problema.
+      </div>
+    </div>
+  </div>
+  <br>
+<font face="Times New Roman" color="black" size="13" style="padding:40px"><b>Tipi di dati</b></font>
+  <div class="container mt-5">
+  <table class="table table-striped table-hover table-bordered border-primary">
+    <thead>
+      <tr>
+        <th>Tipo di Dato</th>
+        <th>Caratteristiche</th>
+        <th>Esempio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Intero</td>
+        <td>Numero intero senza parte decimale</td>
+        <td><code>int numero = 42;</code></td>
+      </tr>
+      <tr>
+        <td>Float</td>
+        <td>Numero a virgola mobile a precisione singola</td>
+        <td><code>float numero = 3.14f;</code></td>
+      </tr>
+      <tr>
+        <td>Double</td>
+        <td>Numero a virgola mobile a precisione doppia</td>
+        <td><code>double numero = 3.14;</code></td>
+      </tr>
+      <tr>
+        <td>Carattere</td>
+        <td>Un singolo carattere</td>
+        <td><code>char carattere = 'A';</code></td>
+      </tr>
+      <tr>
+        <td>Stringa</td>
+        <td>Sequenza di caratteri</td>
+        <td><code>char stringa[] = "Hello, World!";</code></td>
+      </tr>
+      <tr>
+        <td>Boolean</td>
+        <td>Valore vero o falso</td>
+        <td><code>bool vero = 1;</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+
+
+<center><a class="btn btn-primary" href="#" role="button">Torna all'inizio</a></center>
+		</main>
+		<footer>
+			
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+		</footer>
+	</body>
+</html>
